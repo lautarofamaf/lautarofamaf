@@ -30,10 +30,10 @@
       </samp>
     </summary>
     <br />
-    <h2></h2>
+<!--     <h2></h2> -->
     <p align="center">
     </p>
-    <h2></h2>
+<!--     <h2></h2> -->
     <br />
     <div align="center">
       <table>
