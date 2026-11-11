@@ -45,24 +45,24 @@ Bridging the gap between low-level hardware/kernel mechanics and scalable cloud 
 * **Hazard Resolution:** Implemented data forwarding logic, hazard detection units, and hardware pipeline stalls to prevent data and control hazards.
 * **Instruction Set:** Extended the control unit, datapath registers, and ALU to support logical shift instructions (`LSL`, `LSR`).
 
-### 🐧 [xv6 Kernel Scheduler (MLFQ)](https://github.com/lautarofamaf/lab3-SO)
+### 🐧 [xv6 Kernel Scheduler (MLFQ)](https://github.com/lautarofamaf/xv6-kernel-scheduler-mlfq)
 ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black) ![xv6](https://img.shields.io/badge/OS-xv6--riscv-orange?style=flat-square)
 * Modified the xv6 RISC-V kernel to replace the default Round Robin scheduler with a **Multi-Level Feedback Queue (MLFQ)**.
 * Implemented priority queues, quantum tracking, dynamic priority demotion, and starvation prevention via periodic aging.
 * Measured context-switch latency and process turnaround time improvements for mixed CPU/IO-bound workloads.
 
-### 📡 [Reliable Transport Protocol & Congestion Control](https://github.com/lautarofamaf/lab3-Redes)
+### 📡 [Reliable Transport Protocol & Congestion Control](https://github.com/lautarofamaf/reliable-transport-protocol-cpp)
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) ![OMNeT++](https://img.shields.io/badge/Sim-OMNeT%2B%2B-blue?style=flat-square)
 * Engineered an end-to-end reliable transport layer simulation in C++ over an unreliable network medium.
 * Implemented **Flow Control** (sliding window) and **Congestion Control** mechanisms to prevent network saturation and packet drop.
 * Evaluated throughput and queue utilization under severe synthetic latency and high packet loss scenarios.
 
-### 🔒 [xv6 Kernel Synchronization & Semaphores](https://github.com/lautarofamaf/lab2-SO)
+### 🔒 [xv6 Kernel Synchronization & Semaphores](https://github.com/lautarofamaf/xv6-kernel-semaphores-sync)
 ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black) ![Concurrency](https://img.shields.io/badge/Concurrency-Kernel_Locks-red?style=flat-square)
 * Engineered kernel-level semaphore synchronization primitives (`sem_open`, `sem_close`, `sem_up`, `sem_down`) in xv6.
 * Integrated system calls managing sleep locks, atomic state transitions, and coordination queues to eliminate race conditions.
 
-### 📊 [Distributed Big Data Pipeline](https://github.com/lautarofamaf/paradigmas25-g28-lab3)
+### 📊 [Distributed Big Data Pipeline](https://github.com/lautarofamaf/spark-distributed-data-pipeline)
 ![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=flat-square&logo=apachespark&logoColor=white) ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 * Distributed batch processing pipeline leveraging Spark RDD transformations and `reduceByKey` to ingest and process large XML/JSON news feeds.
 * Scaled named-entity extraction and topic aggregation with resilient distributed datasets and partition optimizations.
