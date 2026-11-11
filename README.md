@@ -1,12 +1,16 @@
 <div align="center">
 
-# Hi there! 👋 I'm Lautaro Deco
+# Lautaro Deco
 
-### Software Engineer | Backend, Distributed Systems & Low-Level Architecture
-**Computer Science (FaMAF, UNC) | Linux & Systems Enthusiast**
+**Full-Spectrum Backend & Systems Engineer**  
+*Computer Science @ FaMAF — Universidad Nacional de Córdoba*
 
-Building reliable backend services, real-time architectures, and performance-critical software.  
-Bridging the gap between low-level hardware/kernel mechanics and scalable cloud backends.
+```
+[ Microarchitecture ]  ───>  [ Kernel & OS ]  ───>  [ Network Protocols ]  ───>  [ Distributed Backends ]
+   LEGv8 CPU Core             xv6 Scheduler            Reliable Transport           FastAPI & Spark
+```
+
+Bridging the gap between silicon-level hardware logic, kernel-level synchronization, and high-concurrency cloud backends.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/lautaro-deco)
 [![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:portadeco@gmail.com)
@@ -16,79 +20,108 @@ Bridging the gap between low-level hardware/kernel mechanics and scalable cloud 
 
 ---
 
-## 🚀 Featured Engineering Projects
+## 🧭 Engineering Index
 
-### 🎮 [Death on the Cards — Real-Time Multiplayer Backend](https://github.com/lautarofamaf/dotc-backend)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) ![WebSockets](https://img.shields.io/badge/WebSockets-010101?style=flat-square&logo=socketdotio&logoColor=white) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat-square&logo=sqlalchemy&logoColor=white) ![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
-* **Real-Time Architecture:** Full-duplex WebSocket communication managing concurrent player sessions, real-time events, and synchronized game states with low latency.
-* **Modular Domain Design:** Layered architecture strictly decoupling API transport, domain rules, card effect engines, and persistence with dependency injection.
-* **Reliability:** Automated test suite with Pytest simulating complex multi-client game workflows, state transitions, and edge-case turns.
-
-### 🐾 [DiagnoVET — Automated Medical Report Extraction Service](https://github.com/lautarofamaf/diagnovet-challenge)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Firestore](https://img.shields.io/badge/Firestore-FFCA28?style=flat-square&logo=firebase&logoColor=black)
-* **Data Processing Pipeline:** Asynchronous parsing pipeline extracting unstructured clinical text, patient metadata, and embedded medical images from veterinary PDFs using PyMuPDF.
-* **Cloud & Containerization:** Fully containerized with Docker and deployed to production on Render, utilizing Google Cloud Firestore for persistence and secure credential rotation.
-
-### ⚡ [Dynamic Segment Tree Engine — Range Queries](https://github.com/lautarofamaf/Coding-Challenge-APM)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![Algorithms](https://img.shields.io/badge/Complexity-O(log%20U)-blue?style=flat-square) ![Testing](https://img.shields.io/badge/Testing-Oracles%20%26%20Stress-success?style=flat-square)
-* **High-Performance Core:** Implemented dynamic segment tree with lazy node allocation, enabling `O(log U)` interval updates and point queries while keeping memory proportional to accessed positions.
-* **Verification:** Stress-tested using randomized oracle test suites and large workloads to validate boundary behavior and numerical precision under high variance.
+| Domain | Core Focus | Featured Projects |
+| :--- | :--- | :--- |
+| **Distributed Backends & Real-Time** | Concurrency, WebSockets, Event-Driven APIs | [`dotc-backend`](#death-on-the-cards--real-time-multiplayer-backend), [`diagnovet-challenge`](#diagnovet--automated-clinical-report-service), [`Coding-Challenge-APM`](#apm-dynamic-segment-tree-engine) |
+| **Operating Systems & Hardware** | CPU Pipelining, Scheduling, Kernel Synchronization | [`pipelined-legv8-processor`](#5-stage-pipelined-legv8-processor-core), [`xv6-kernel-scheduler-mlfq`](#xv6-kernel-scheduler-mlfq), [`xv6-kernel-semaphores-sync`](#xv6-kernel-synchronization--semaphores) |
+| **Networks & Distributed Data** | Flow/Congestion Control, RDD Transformations | [`reliable-transport-protocol-cpp`](#reliable-transport-protocol--congestion-control), [`spark-distributed-data-pipeline`](#distributed-big-data-pipeline) |
 
 ---
 
-## ⚙️ Systems & Core Engineering
-*Deep-tech implementations involving Operating System Kernels, Computer Architecture, Networks, and Distributed Computing.*
+## ⚡ Architectural Case Studies
 
-### 🖥️ [Pipelined LEGv8 Processor Core](https://github.com/lautarofamaf/pipelined-legv8-processor)
-![SystemVerilog](https://img.shields.io/badge/SystemVerilog-1A365D?style=flat-square&logo=verilog&logoColor=white) ![Hardware](https://img.shields.io/badge/Hardware-CPU_Pipelining-green?style=flat-square)
-* **CPU Design:** Extended a 5-stage RISC processor (Fetch, Decode, Execute, Memory, Writeback) in SystemVerilog.
-* **Hazard Resolution:** Implemented data forwarding logic, hazard detection units, and hardware pipeline stalls to prevent data and control hazards.
-* **Instruction Set:** Extended the control unit, datapath registers, and ALU to support logical shift instructions (`LSL`, `LSR`).
+### 🌐 High-Concurrency & Real-Time Systems
 
-### 🐧 [xv6 Kernel Scheduler (MLFQ)](https://github.com/lautarofamaf/xv6-kernel-scheduler-mlfq)
-![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black) ![xv6](https://img.shields.io/badge/OS-xv6--riscv-orange?style=flat-square)
-* Modified the xv6 RISC-V kernel to replace the default Round Robin scheduler with a **Multi-Level Feedback Queue (MLFQ)**.
-* Implemented priority queues, quantum tracking, dynamic priority demotion, and starvation prevention via periodic aging.
-* Measured context-switch latency and process turnaround time improvements for mixed CPU/IO-bound workloads.
+#### 🎮 [Death on the Cards — Real-Time Multiplayer Backend](https://github.com/lautarofamaf/dotc-backend)
+> **Stack:** `Python` `FastAPI` `WebSockets` `SQLAlchemy` `Pytest` `Docker`
 
-### 📡 [Reliable Transport Protocol & Congestion Control](https://github.com/lautarofamaf/reliable-transport-protocol-cpp)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) ![OMNeT++](https://img.shields.io/badge/Sim-OMNeT%2B%2B-blue?style=flat-square)
-* Engineered an end-to-end reliable transport layer simulation in C++ over an unreliable network medium.
-* Implemented **Flow Control** (sliding window) and **Congestion Control** mechanisms to prevent network saturation and packet drop.
-* Evaluated throughput and queue utilization under severe synthetic latency and high packet loss scenarios.
+* **State Synchronization:** Full-duplex WebSocket architecture managing synchronized multi-client state transitions, action broadcasting, and reconnect resilience with low end-to-end latency.
+* **Domain Decoupling:** Strictly layered design isolating transport endpoints, dependency injection wiring, database persistence, and card-effect state machines.
+* **Test Automation:** Comprehensive Pytest coverage verifying concurrent game rooms, turn timeouts, and complex edge-case game resolution.
 
-### 🔒 [xv6 Kernel Synchronization & Semaphores](https://github.com/lautarofamaf/xv6-kernel-semaphores-sync)
-![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black) ![Concurrency](https://img.shields.io/badge/Concurrency-Kernel_Locks-red?style=flat-square)
-* Engineered kernel-level semaphore synchronization primitives (`sem_open`, `sem_close`, `sem_up`, `sem_down`) in xv6.
-* Integrated system calls managing sleep locks, atomic state transitions, and coordination queues to eliminate race conditions.
+#### 🐾 [DiagnoVET — Automated Clinical Report Service](https://github.com/lautarofamaf/diagnovet-challenge)
+> **Stack:** `Python` `FastAPI` `PyMuPDF` `Google Cloud Firestore` `Docker` `Render`
 
-### 📊 [Distributed Big Data Pipeline](https://github.com/lautarofamaf/spark-distributed-data-pipeline)
-![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=flat-square&logo=apachespark&logoColor=white) ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-* Distributed batch processing pipeline leveraging Spark RDD transformations and `reduceByKey` to ingest and process large XML/JSON news feeds.
-* Scaled named-entity extraction and topic aggregation with resilient distributed datasets and partition optimizations.
+* **Asynchronous Ingestion Pipeline:** Streamlined document parsing service extracting structured entities and embedded clinical imagery from arbitrary PDF reports.
+* **Cloud Persistence:** Integrated with Firestore for document indexing and metadata querying, containerized with Docker, and deployed on Render with secure credential rotation.
 
-### 🔬 [gem5 Processor Architecture Simulation](https://github.com/lautarofamaf/gem5-processor-architecture-sim)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![gem5](https://img.shields.io/badge/Simulator-gem5-purple?style=flat-square)
-* Configured and simulated In-Order and Out-of-Order CPU microarchitectures under diverse benchmark workloads.
-* Analyzed cache hit/miss ratios, branch predictor accuracy, IPC (Instructions Per Cycle), and memory latency tradeoffs.
+#### 📈 [APM Dynamic Segment Tree Engine](https://github.com/lautarofamaf/Coding-Challenge-APM)
+> **Stack:** `Python` `Algorithms & Data Structures` `Stress Testing`
+
+* **Logarithmic Complexity:** Implemented an implicit dynamic segment tree supporting range average queries and point updates in `O(log U)` time.
+* **Memory Pacing:** Dynamic node allocation keeping memory strictly proportional to distinct accessed coordinates rather than the total coordinate span.
+* **Oracle Verification:** Validated correctness through randomized stress testing against brute-force reference oracles across high-variance workloads.
 
 ---
 
-## 🛠️ Technical Stack
+### ⚙️ Operating Systems & Microarchitecture
 
-* **Languages:** Python, C, C++, Java, Haskell, SystemVerilog, SQL, Assembly.
-* **Backend & Web:** FastAPI, WebSockets, RESTful APIs, SQLAlchemy, PostgreSQL, MongoDB, Firebase / Firestore.
-* **Systems & Infra:** Linux (Arch Linux, Hyprland), Docker, Git, CI/CD, Apache Spark, xv6 Kernel, gem5.
-* **Engineering Principles:** Clean Architecture, TDD / Automated Testing, Concurrency & Synchronization, Algorithmic Optimization.
+#### 🖥️ [5-Stage Pipelined LEGv8 Processor Core](https://github.com/lautarofamaf/pipelined-legv8-processor)
+> **Stack:** `SystemVerilog` `ARMv8 / LEGv8 ISA` `Computer Architecture`
+
+* **Pipelined Datapath:** Implemented an active 5-stage instruction pipeline (`IF`, `ID`, `EX`, `MEM`, `WB`) in SystemVerilog.
+* **Hazard Management:** Designed dedicated hardware hazard detection and forwarding units to resolve data dependencies (RAW) without stalling, alongside branch penalty mitigation.
+* **ALU Extensions:** Extended decoder logic and arithmetic-logic unit to natively execute logical shift operations (`LSL`, `LSR`).
+
+#### 🐧 [xv6 Kernel Scheduler (MLFQ)](https://github.com/lautarofamaf/xv6-kernel-scheduler-mlfq)
+> **Stack:** `C` `xv6-riscv` `RISC-V` `Operating Systems`
+
+* **Adaptive Scheduling:** Re-engineered the xv6 RISC-V kernel from Round Robin to a **Multi-Level Feedback Queue (MLFQ)** scheduler.
+* **Prioritization & Aging:** Shorter quantum for interactive tasks, longer quantum for compute-bound tasks; dynamic priority demotion upon slice exhaustion and automatic priority aging to eliminate process starvation.
+* **Context-Switch Profiling:** Analyzed turnaround and response time trade-offs using kernel-level instrumentation and timeline visualizers.
+
+#### 🔒 [xv6 Kernel Synchronization & Semaphores](https://github.com/lautarofamaf/xv6-kernel-semaphores-sync)
+> **Stack:** `C` `xv6-riscv` `Concurrency` `Kernel Locks`
+
+* **Counting Semaphores:** Built atomic kernel synchronization channels with `sem_open`, `sem_close`, `sem_up`, and `sem_down` primitives.
+* **Race Condition Elimination:** Utilized kernel sleep locks and channel queue management to ensure safe inter-process communication (IPC), verified via concurrent ping-pong stress tests.
+
+---
+
+### 📡 Network Protocols & Distributed Computing
+
+#### 🛰️ [Reliable Transport Protocol & Congestion Control](https://github.com/lautarofamaf/reliable-transport-protocol-cpp)
+> **Stack:** `C++17` `OMNeT++` `Discrete-Event Simulation` `Transport Layer`
+
+* **End-to-End Reliability:** Designed and evaluated sender/receiver transport state machines over lossy, delay-prone synthetic networks.
+* **Flow & Congestion Avoidance:** Engineered adaptive windowing and receiver buffer feedback to prevent receiver overrun (flow bottleneck) and intermediate router packet drop (congestion bottleneck).
+
+#### 📊 [Distributed Big Data Pipeline](https://github.com/lautarofamaf/spark-distributed-data-pipeline)
+> **Stack:** `Apache Spark` `Java 11` `Maven` `Distributed Computing`
+
+* **Resilient Data Processing:** Scalable batch aggregation pipeline extracting entities from RSS feeds and Reddit data sources using Spark RDDs.
+* **Parallel Transformations:** Leveraged distributed partitioning and `reduceByKey` operations to aggregate keyword frequencies and categories with high throughput.
+
+---
+
+## 🛠️ Technology Landscape
+
+```
+Languages           Python  ·  C  ·  C++  ·  Java  ·  Haskell  ·  SystemVerilog  ·  SQL  ·  Assembly
+Backend & APIs      FastAPI  ·  WebSockets  ·  REST  ·  SQLAlchemy  ·  PostgreSQL  ·  MongoDB  ·  Firestore
+Systems & Runtime   Linux (Arch)  ·  xv6 Kernel  ·  gem5  ·  OMNeT++  ·  Docker  ·  Git  ·  Apache Spark
+Methodologies       Clean Architecture  ·  TDD / Automated Testing  ·  Concurrency  ·  Algorithmic Optimization
+```
+
+---
+
+## 🧠 Engineering Philosophy
+
+* **Mechanical Sympathy:** Software performs best when written with respect for the underlying machine—cache hierarchies, context-switch overheads, and kernel boundaries.
+* **Deterministic Verification:** Systems code must be defended by automated tests, stress simulations, and boundary analysis before touching production.
+* **Strict Layering:** Keep transport protocols, business rules, and persistence primitives decoupled so architectures remain extensible and testable.
+
+---
+
+## 🐧 Workstation & Personal Systems
+Beyond application code, I maintain a tailored Unix workflow and system environment:
+* [Hyprland Dotfiles](https://github.com/lautarofamaf/dots-hyprland) — Custom Wayland/Hyprland environment optimized for keyboard-driven development.
+* [System Configuration](https://github.com/lautarofamaf/config) — Shell configurations, developer utilities, and environment automation.
+* [Competitive Programming](https://github.com/lautarofamaf/cpc) — Algorithmic problem solving in C++.
 
 ---
 
 ## 🎯 Looking For
-I am currently looking for opportunities as a **Junior Backend Engineer** or **Systems / Software Engineer**, where I can apply strong fundamentals in concurrency, distributed systems, and low-level optimization to real-world infrastructure challenges.
-
----
-
-## 🌐 Personal Environment & Configurations
-* [Hyprland Dotfiles](https://github.com/lautarofamaf/dots-hyprland) — Fully customized Wayland/Hyprland Linux desktop environment.
-* [System Configuration](https://github.com/lautarofamaf/config) — Shell and development environment dotfiles.
-* [Competitive Programming](https://github.com/lautarofamaf/cpc) — Algorithmic problem solving and data structures in C++.
+Open to opportunities as a **Junior Backend Engineer** or **Systems / Software Engineer**. Interested in backend architectures, distributed services, concurrency challenges, and infrastructure engineering.
