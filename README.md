@@ -5,10 +5,6 @@
 **Full-Spectrum Backend & Systems Engineer**  
 *Computer Science @ FaMAF — Universidad Nacional de Córdoba*
 
-```
-[ Microarchitecture ]  ───>  [ Kernel & OS ]  ───>  [ Network Protocols ]  ───>  [ Distributed Backends ]
-   LEGv8 CPU Core             xv6 Scheduler            Reliable Transport           FastAPI & Spark
-```
 
 Bridging the gap between silicon-level hardware logic, kernel-level synchronization, and high-concurrency cloud backends.
 
